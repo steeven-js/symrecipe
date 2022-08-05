@@ -13,6 +13,6 @@ git push -u origin main
 ## Git-1
 ```
 git add .
-git commit -m "✨ Add homepage"
-git push -u origin main
+git commit -m "tuto"
+git push 
 ```
