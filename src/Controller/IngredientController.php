@@ -11,7 +11,16 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
 class IngredientController extends AbstractController
 {
-    #[Route('/ingredient', name: 'ingredient')]
+    /**
+     * This function display all ingredients
+     *
+     * @param  IngredientRepository $repository
+     * @param  PaginatorInterface   $paginator
+     * @param  Request              $request
+     *
+     * @return Response
+     */
+    #[Route('/ingredient', name: 'ingredient', methods: ['GET'])]
     public function index(IngredientRepository $repository, PaginatorInterface $paginator, Request $request): Response
     {
         $ingredients = $paginator->paginate(
