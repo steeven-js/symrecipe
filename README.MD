@@ -14,6 +14,5 @@ git push -u origin main
 ```
 git add .
 git commit -m "✨ Add homepage"
-git branch -M main
 git push -u origin main
 ```
