@@ -13,6 +13,6 @@ git push -u origin main
 ## Git-1
 ```
 git add .
-git commit -m "✨ Adding CRUD for ingredient"
+git commit -m "✨ Apprendre #Symfony 6 - CRUD des recettes #9"
 git push 
 ```
