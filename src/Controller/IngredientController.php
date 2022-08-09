@@ -108,15 +108,6 @@ class IngredientController extends AbstractController
         Ingredient $ingredient
         ) : Response {
 
-        if(!$ingredient) {
-            $this->addFlash(
-                'success',
-                'L\'ingredient en question n\'a pas été trouvé !'
-            );
-
-            return $this->redirectToRoute('ingredient');
-        }
-        
         $manager->remove($ingredient);
         $manager->flush();
 
