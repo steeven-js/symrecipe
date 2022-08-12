@@ -60,7 +60,7 @@ class Recipe
     #[Assert\NotNull()]
     private ?\DateTimeImmutable $updatedAt = null;
 
-    #[ORM\ManyToMany(targetEntity: ingredient::class)]
+    #[ORM\ManyToMany(targetEntity: Ingredient::class)]
     private Collection $ingredients;
 
     public function __construct()
@@ -163,51 +163,52 @@ class Recipe
         return $this;
     }
 
-    public function getCreateAt(): ?\DateTimeImmutable
+     public function getCreatedAt(): ?\DateTimeImmutable
     {
-        return $this->createAt;
+        return $this->createdAt;
     }
 
-    public function setCreateAt(\DateTimeImmutable $createAt): self
+    public function setCreatedAt(\DateTimeImmutable $createdAt): self
     {
-        $this->createAt = $createAt;
+        $this->createdAt = $createdAt;
 
         return $this;
     }
 
-    public function getUpdateAt(): ?\DateTimeImmutable
+    public function getUpdatedAt(): ?\DateTimeImmutable
     {
-        return $this->updateAt;
+        return $this->updatedAt;
     }
 
-    public function setUpdateAt(\DateTimeImmutable $updateAt): self
+    public function setUpdatedAt(\DateTimeImmutable $updatedAt): self
     {
-        $this->updateAt = $updateAt;
+        $this->updatedAt = $updatedAt;
 
         return $this;
     }
 
-    /**
-     * @return Collection<int, ingredient>
+ /**
+     * @return Collection|Ingredient[]
      */
     public function getIngredients(): Collection
     {
         return $this->ingredients;
     }
 
-    public function addIngredient(ingredient $ingredient): self
+    public function addIngredient(Ingredient $ingredient): self
     {
         if (!$this->ingredients->contains($ingredient)) {
-            $this->ingredients->add($ingredient);
+            $this->ingredients[] = $ingredient;
         }
 
         return $this;
     }
 
-    public function removeIngredient(ingredient $ingredient): self
+    public function removeIngredient(Ingredient $ingredient): self
     {
         $this->ingredients->removeElement($ingredient);
 
         return $this;
     }
+
 }
