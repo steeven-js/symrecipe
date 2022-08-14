@@ -13,7 +13,7 @@ git push -u origin main
 ## Git-1
 ```
 git add .
-git commit -m "🚧 Setting up login form"
+git commit -m "✨ Adding registration's form, edit user form's and edit user password's form"
 git push -u origin main
 ```
 ✨
